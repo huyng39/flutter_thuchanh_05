@@ -1,0 +1,60 @@
+{
+    "data":
+    [
+        {
+            "id": 1,
+            "name": "iPhone 15 Pro Max",
+            "price": 30990000,
+            "img": "img_1.jpg",
+            "des": "Iphone 15 PM đen 256GB",
+            "catId": 1 
+        },
+        {
+            "id": 2,
+            "name": "iPhone 15 128GB",
+            "price": 19990000,
+            "img": "img_2.jpg",
+            "des": "Iphone 15 xanh lá 128GB",
+            "catId": 1 
+        },
+        {
+            "id": 3,
+            "name": "iPhone 15 256GB",
+            "price": 15000000,
+            "img": "img_3.jpg",
+            "des": "Iphone 15 hồng",
+            "catId": 2  
+        },
+        {
+            "id": 4,
+            "name": "iPhone 15 Pro 128GB",
+            "price": 27090000,
+            "img": "img_4.jpg",
+            "des": "iPhone 15 Pro Titan 128GB",
+            "catId": 2  
+        },
+        {
+            "id": 5,
+            "name": "iPhone 13 128GB",
+            "price": 15290000,
+            "img": "img_5.jpg",
+            "des": "iPhone 13 trắng 128GB",
+            "catId": 3 
+        },
+        {
+            "id": 6,
+            "name": "iPhone 14 Pro Max",
+            "price": 19990000,
+            "img": "img_6.jpg",
+            "des": "iPhone 14 PM 128GB tím"
+        },
+        {
+            "id": 7,
+            "name": "iPhone 14 128GB",
+            "price": 17990000,
+            "img": "img_7.jpg",
+            "des": "iPhone 14 128GB tím nhạt",
+            "catId": 3  
+        }
+    ]
+}
