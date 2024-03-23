@@ -17,17 +17,16 @@ class _AccountWidgetState extends State<AccountWidget> {
     SharedPreferences pref = await SharedPreferences.getInstance();
     String strUser = pref.getString('user')!;
 
-    if(strUser == null){
+    if (strUser == null) {
       objUser = User(fullName: "No data");
-    }
-    else{
+    } else {
       objUser = User.fromJson(jsonDecode(strUser));
     }
     setState(() {});
   }
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     getUser();
   }
@@ -35,7 +34,13 @@ class _AccountWidgetState extends State<AccountWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Full name: ${objUser.fullName}")),
+      body: Center(
+          child: Text(
+        "Full name: ${objUser.fullName}",
+        style: const TextStyle(
+            fontSize: 18, color: Color.fromARGB(255, 11, 7, 233)
+            ),
+      )),
     );
   }
 }
