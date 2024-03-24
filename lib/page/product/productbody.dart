@@ -24,7 +24,7 @@ Widget itemProView(Product productModel) {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Image.asset(
-          urlimg + productModel.img!,
+          url_product_img + productModel.img!,
           height: 100,
           width: 100,
           errorBuilder: (context, error, stackTrace) => const Icon(Icons.image),

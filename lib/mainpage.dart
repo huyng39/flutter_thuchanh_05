@@ -6,7 +6,7 @@ import 'page/register/registerwidget.dart';
 import 'page/account/accountwidget.dart';
 
 class Mainpage extends StatefulWidget {
-  const Mainpage({super.key});
+   const Mainpage({Key? key}) : super(key: key);
 
   @override
   State<Mainpage> createState() => _MainpageState();
@@ -15,7 +15,7 @@ class Mainpage extends StatefulWidget {
 class _MainpageState extends State<Mainpage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetOptions2 = <Widget>[
     HomeWidget(),
     CategoryWidget(),
     RegisterWidget(),
@@ -28,28 +28,7 @@ class _MainpageState extends State<Mainpage> {
     });
   }
   
-  _loadWidget(int index) {
-    var nameWidgets = "Home";
-    switch (index) {
-      case 0:
-        nameWidgets = "Home";
-        break;
-      case 1:
-        nameWidgets = "Contact";
-        break;
-      case 2:
-        nameWidgets = "Info";
-        break;
-      case 3:
-        {
-          return const RegisterWidget();
-        }
-      default:
-      nameWidgets = "None";
-      break;
-    }
-    return DefaultWidget(title: nameWidgets);
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,14 +39,14 @@ class _MainpageState extends State<Mainpage> {
           title: const Text('List Product'),
         ),
         body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+          child: _widgetOptions2.elementAt(_selectedIndex),
         ),
         drawer: Drawer(
         child: ListView(
           //Ko bỏ padding từ listview
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: const BoxDecoration(
                 color: Colors.blue,
               ),
@@ -97,8 +76,10 @@ class _MainpageState extends State<Mainpage> {
             leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
-              Navigator.pop(context);
-              _selectedIndex = 0;
+              const HomeWidget();
+            //  Navigator.pop(context,  
+            //  MaterialPageRoute(builder: (BuildContext context) { return const HomeWidget(); }));
+             _selectedIndex = 0;
               setState(() {});
             },
            ),
@@ -106,25 +87,29 @@ class _MainpageState extends State<Mainpage> {
             leading: const Icon(Icons.category_outlined),
             title: const Text('Category'),
             onTap: () {
-              Navigator.pop(context);
+              const CategoryWidget();
+              
+              
               _selectedIndex = 1;
               setState(() {});
+              // Navigator.pop(context);
+              
             },
            ),
            ListTile(
             leading: const Icon(Icons.person),
             title: const Text('Register'),
             onTap: () {
-              Navigator.pop(context);
+              const RegisterWidget();
               _selectedIndex = 2;
               setState(() {});
             },
            ),
            ListTile(
-            leading: const Icon(Icons.supervised_user_circle),
-            title: const Text('Register'),
+            leading: const Icon(Icons.info),
+            title: const Text('Info'),
             onTap: () {
-              Navigator.pop(context);
+              const AccountWidget();
               _selectedIndex = 3;
               setState(() {});
             },
@@ -136,7 +121,7 @@ class _MainpageState extends State<Mainpage> {
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
             onTap: () {
-              Navigator.pop(context);
+              // Navigator.pop(context);
               _selectedIndex = 0;
               setState(() {});
             },
@@ -168,7 +153,6 @@ class _MainpageState extends State<Mainpage> {
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         ),
-        body:_loadWidget(_selectedIndex),
       ),
     );
   }
