@@ -3,8 +3,10 @@ import '../../data/model/productmodel.dart';
 import '../../conf/const.dart';
 import 'package:intl/intl.dart';
 
+
 //create sub widget
 Widget itemProView(Product productModel) {
+  String linkImgPro = url_product_img + productModel.img!;
   return Container(
     margin: const EdgeInsets.only(left: 5, right: 5),
     padding: const EdgeInsets.all(8),

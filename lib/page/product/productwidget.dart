@@ -4,6 +4,7 @@ import '../../conf/const.dart';
 import 'package:flutter_thuchanh_05/data/model/productmodel.dart';
 import '../../data/provider/productprodiver.dart';
 import 'package:flutter_thuchanh_05/data/model/categorymodel.dart';
+import 'package:flutter_thuchanh_05/pictruedialog_2.dart';
 
 class ProductWidget extends StatefulWidget {
   final Category objCat;
@@ -46,8 +47,16 @@ class _ProductWidgetState extends State<ProductWidget> {
                     mainAxisSpacing: 8,
                   ),
                   itemBuilder: (context, index) {
-                    return itemProView(lstPro[index]);
-                  });
+                    return GestureDetector(
+                      onTap:() => {
+                         showDialog(
+                        context: context,
+                        builder: (_) => PictureDialogProduct(lstPro[index])),
+                      },
+                    
+                    child: itemProView(lstPro[index]));
+                  },
+                  );
             }),
       ),
     );
