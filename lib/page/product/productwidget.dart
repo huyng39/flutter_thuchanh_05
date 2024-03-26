@@ -4,7 +4,7 @@ import '../../conf/const.dart';
 import 'package:flutter_thuchanh_05/data/model/productmodel.dart';
 import '../../data/provider/productprodiver.dart';
 import 'package:flutter_thuchanh_05/data/model/categorymodel.dart';
-import 'package:flutter_thuchanh_05/pictruedialog_2.dart';
+import 'package:flutter_thuchanh_05/pictruedialog.dart';
 
 class ProductWidget extends StatefulWidget {
   final Category objCat;
@@ -51,7 +51,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       onTap:() => {
                          showDialog(
                         context: context,
-                        builder: (_) => PictureDialogProduct(lstPro[index])),
+                        builder: (_) => pictureDialogProduct(lstPro[index])),
                       },
                     
                     child: itemProView(lstPro[index]));

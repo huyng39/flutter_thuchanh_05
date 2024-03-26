@@ -68,7 +68,8 @@ class _MainpageState extends State<Mainpage> {
                     onTap: () => {
                       showDialog(
                           context: context,
-                          builder: (_) => PictureDialogProfile(context)),
+                          builder: (_) => pictureDialogProfile(context)),
+                          
                     },
                     child: CircleAvatar(
                       radius: 40,
