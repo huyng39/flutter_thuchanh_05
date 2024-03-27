@@ -40,7 +40,7 @@ class _MainpageState extends State<Mainpage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('List Product'),
+        title: const Text('Thực hành buổi 5'),
       ),
       body: Center(
         child: _widgetOptions2.elementAt(_selectedIndex),
